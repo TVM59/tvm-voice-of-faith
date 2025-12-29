@@ -4,53 +4,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TVM – The Voice of Faith</title>
-  <meta name="description" content="TVM – The Voice of Faith: audio teachings and ministry resources." />
+  <meta name="description" content="TVM – The Voice of Faith ministry app." />
   <meta name="theme-color" content="#0b5aa6" />
 
   <style>
-    :root{
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --text:#0b1220;
-      --muted:#4b5563;
-      --border:#e6eaf0;
-      --shadow: 0 10px 24px rgba(10, 18, 32, .08);
-      --radius:18px;
-      --grad: linear-gradient(135deg, #10b3c7 0%, #0b5aa6 55%, #243b93 100%);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height:1.45;
-    }
-    .header{
-      background: var(--grad);
-      color:#fff;
-      padding: 18px 16px 16px;
-      position: sticky;
-      top:0;
-      z-index: 5;
-      box-shadow: 0 8px 18px rgba(0,0,0,.12);
-    }
-    .headerRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      max-width: 880px;
-      margin:0 auto;
-    }
-    .brand{
-      display:flex; gap:12px; align-items:center;
-    }
-    .logo{
-      width:42px; height:42px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.16);
-      display:flex; align-items:center; justify-content:center;
-      font-weight:800; letter-spacing:.5px;
-    }
-    .titles .name{
-      fon
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8fb;color:#111}
+    header{background:#0b5aa6;color:#fff;padding:16px}
+    h1{margin:0;font-size:20px}
+    h2{margin-top:0}
+    main{max-width:800px;margin:0 auto;padding:16px}
+    .card{background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+    .photo img{width:100%;max-width:150px;border-radius:12px}
+    .buttons a{display:block;text-decoration:none;background:#0b5aa6;color:#fff;padding:14px;border-radius:10px;margin-bottom:12px;font-weight:bold}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>TVM – The Voice of Faith</h1>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>About Our Ministry</h2>
+
+    <div class="photo">
+      <!-- Replace tim.jpg with your actual photo filename -->
+      <img src="tim.jpg" alt="Tim Voorhies">
+    </div>
+
+    <p>
+      Welcome, and thank you for being here. My name is Tim Voorhies, and I’m honored
+      that you’ve connected with <strong>TVM – The Voice of Faith</strong>.
+    </p>
+
+    <p>
+      This ministry exists to proclaim the Gospel of Jesus Christ and to help believers
+      grow strong in faith. I believe that Jesus Christ is the same yesterday, today,
+      and forever, and that what He did in Scripture, He is still doing today.
+    </p>
+
+    <p>
+      Whether you are listening to an audio teaching or studying the Word, my prayer
+      is that what you find here draws you closer to the Lord.
+    </p>
+
+    <p><strong>— Tim Voorhies</strong></p>
+  </div>
+
+  <div class="card buttons">
+    <a href="#">🎧 Audio Teachings</a>
+    <a href="#">📖 Teaching Articles</a>
+  </div>
+
+</main>
+
+</body>
+</html>
