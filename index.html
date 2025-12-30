@@ -6,60 +6,225 @@
   <title>TVM – The Voice of Faith</title>
   <meta name="description" content="TVM – The Voice of Faith ministry app." />
   <meta name="theme-color" content="#0b5aa6" />
+  <link rel="manifest" href="/manifest.json">
 
   <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8fb;color:#111}
-    header{background:#0b5aa6;color:#fff;padding:16px}
-    h1{margin:0;font-size:20px}
-    h2{margin-top:0}
-    main{max-width:800px;margin:0 auto;padding:16px}
-    .card{background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
-    .photo img{width:100%;max-width:150px;border-radius:12px}
-    .buttons a{display:block;text-decoration:none;background:#0b5aa6;color:#fff;padding:14px;border-radius:10px;margin-bottom:12px;font-weight:bold}
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#4b5563;
+      --border:#e6eaf0;
+      --shadow: 0 10px 24px rgba(10, 18, 32, .08);
+      --radius:18px;
+      --grad: linear-gradient(135deg, #10b3c7 0%, #0b5aa6 55%, #243b93 100%);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.45;
+    }
+    .header{
+      background: var(--grad);
+      color:#fff;
+      padding: 18px 16px 16px;
+      position: sticky;
+      top:0;
+      z-index: 5;
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
+    }
+    .headerRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      max-width: 880px;
+      margin:0 auto;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:42px; height:42px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.16);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; letter-spacing:.5px;
+    }
+    .titles .name{
+      font-size: 18px;
+      font-weight: 800;
+      margin:0;
+    }
+    .titles .tag{
+      margin:0;
+      opacity:.92;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .menu{
+      width:42px;height:42px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.22);
+      user-select:none;
+      font-size: 20px;
+    }
+    .wrap{max-width: 880px; margin: 0 auto; padding: 16px;}
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .card + .card{margin-top:14px}
+    .aboutHead{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+    .photo{
+      width: 92px;
+      height: 92px;
+      border-radius: 18px;
+      background: #d7dee9;
+      overflow:hidden;
+      flex: 0 0 auto;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .aboutTitle{
+      margin:0 0 6px 0;
+      font-size: 16px;
+      font-weight: 900;
+    }
+    .aboutText{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .actions{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 14px 14px;
+      border-radius: 16px;
+      border:1px solid var(--border);
+      background: #fff;
+      text-decoration:none;
+      color: var(--text);
+      box-shadow: 0 10px 20px rgba(10,18,32,.06);
+      font-weight: 800;
+    }
+    .btn small{
+      display:block;
+      font-weight:700;
+      color: var(--muted);
+      margin-top:2px;
+    }
+    .pill{
+      background: var(--grad);
+      color:#fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 900;
+      white-space:nowrap;
+    }
+    details{
+      margin-top:10px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      color:#0b5aa6;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .muted{color:var(--muted)}
+    .sectionTitle{
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      font-weight: 900;
+    }
   </style>
 </head>
 
 <body>
-
-<header>
-  <h1>TVM – The Voice of Faith</h1>
-</header>
-
-<main>
-
-  <div class="card">
-    <h2>About Our Ministry</h2>
-
-    <div class="photo">
-      <!-- Replace tim.jpg with your actual photo filename -->
-      <img src="tim.jpg" alt="Tim Voorhies">
+  <header class="header">
+    <div class="headerRow">
+      <div class="brand">
+        <div class="logo">TVM</div>
+        <div class="titles">
+          <p class="name">TVM</p>
+          <p class="tag">The Voice of Faith</p>
+        </div>
+      </div>
+      <div class="menu" title="Menu (coming soon)">☰</div>
     </div>
+  </header>
 
-    <p>
-      Welcome, and thank you for being here. My name is Tim Voorhies, and I’m honored
-      that you’ve connected with <strong>TVM – The Voice of Faith</strong>.
-    </p>
+  <main class="wrap">
 
-    <p>
-      This ministry exists to proclaim the Gospel of Jesus Christ and to help believers
-      grow strong in faith. I believe that Jesus Christ is the same yesterday, today,
-      and forever, and that what He did in Scripture, He is still doing today.
-    </p>
+    <section class="card">
+      <div class="aboutHead">
+        <div class="photo">
+          <img src="tim.jpg" alt="Tim Voorhies" />
+        </div>
 
-    <p>
-      Whether you are listening to an audio teaching or studying the Word, my prayer
-      is that what you find here draws you closer to the Lord.
-    </p>
+        <div>
+          <h2 class="aboutTitle">About Our Ministry</h2>
+          <p class="aboutText">
+            Welcome, and thank you for being here. My name is Tim Voorhies, and I’m honored that you’ve connected with
+            <strong>TVM – The Voice of Faith</strong>.
+          </p>
+          <details>
+            <summary>Read More</summary>
+            <p class="muted" style="margin:10px 0 0 0;">
+              This ministry exists to proclaim the Gospel of Jesus Christ and to help believers grow strong in faith.
+              I believe that Jesus Christ is the same yesterday, today, and forever, and that what He did in Scripture,
+              He is still doing today — saving, healing, and transforming lives by the power of the Holy Spirit.
+            </p>
+            <p class="muted" style="margin:10px 0 0 0; font-weight:800;">
+              — Tim Voorhies
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-    <p><strong>— Tim Voorhies</strong></p>
-  </div>
+    <section class="card">
+      <h3 class="sectionTitle">Start Here</h3>
+      <div class="actions">
+        <!-- Audio button ALWAYS goes to audio.html -->
+        <a class="btn" href="audio.html">
+          <span>🎧 Audio Teachings<small>Listen to Messages</small></span>
+          <span class="pill">Open</span>
+        </a>
 
-  <div class="card buttons">
-    <a href="#">🎧 Audio Teachings</a>
-    <a href="#">📖  href="audio.html">
-  </div>
+        <!-- Articles button is placeholder for now -->
+        <a class="btn" href="articles.html">
+          <span>📖 Teaching Articles<small>Read &amp; Study</small></span>
+          <span class="pill">Open</span>
+        </a>
+      </div>
+    </section>
 
-</main>
-
+  </main>
 </body>
 </html>
