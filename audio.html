@@ -17,6 +17,40 @@
     .title{font-weight:800;margin:0 0 10px 0}
     audio{width:100%}
   </style>
+  <style>
+  details.month {
+    margin-top: 16px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  summary.month-title {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  summary.month-title::-webkit-details-marker { display: none; }
+  summary.month-title::after {
+    content: "Open";
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    opacity: 0.95;
+  }
+  details[open] > summary.month-title::after {
+    content: "Close";
+  }
+  details.month .audio-item {
+    padding: 0 14px 14px 14px;
+  }
+</style>
+
 </head>
 <body>
   <header><a href="index.html">← Back</a></header>
@@ -44,7 +78,19 @@
   </p>
 </section>
 
-      <h2 style="margin-top:20px;">January 2026</h2>
+  <details class="month">
+  <summary class="month-title">January 2026</summary>
+
+  <div class="audio-item">
+    <p><strong>Higher Level of Knowing Jesus</strong></p>
+    <audio controls preload="metadata" style="width:100%; margin-top:10px;">
+      <source src="https://tvm-audio-cdn.b-cdn.net/january-2026/Higher%20Level%20Of%20Knowing%20Jesus.m4a" type="audio/mp4">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- repeat other audio-item blocks here -->
+</details>
 
 <div class="audio-item">
   <p><strong>Higher Level of Knowing Jesus</strong></p>
